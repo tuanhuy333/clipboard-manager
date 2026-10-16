@@ -1,0 +1,37 @@
+{
+  "name": "clipboard-manager",
+  "version": "0.1.0",
+  "description": "Cross-platform clipboard history manager that lives in the menu bar / system tray",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "icons": "python3 scripts/make_icons.py",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.example.clipboardmanager",
+    "productName": "Clipboard Manager",
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^44.8.0",
+    "electron-builder": "^26.15.3"
+  }
+}
